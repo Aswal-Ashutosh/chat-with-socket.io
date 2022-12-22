@@ -57,13 +57,12 @@
     <body>
         <ul id="messages"></ul>
         <form id="form" action=""><input id="input" autocomplete="off" /><button>Send</button></form>
-        <script src="/socket.io/socket.io.js"></script>
+        <script src="http://localhost:3000/socket.io/socket.io.js"></script>
         <script>
-            var socket = io();
-
-            var messages = document.getElementById("messages");
-            var form = document.getElementById("form");
-            var input = document.getElementById("input");
+            const socket = io("http://localhost:3000");
+            const messages = document.getElementById("messages");
+            const form = document.getElementById("form");
+            const input = document.getElementById("input");
 
             form.addEventListener("submit", function (e) {
                 e.preventDefault();
